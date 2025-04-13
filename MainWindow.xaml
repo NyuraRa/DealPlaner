@@ -8,13 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <!-- Панель инструментов -->
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Name="btnAddTask" Content="Добавить задачу" Click="BtnAddTask_Click" Height="46" Width="147" FontSize="14"/>
-            <Button Name="btnEditTask" Content="Редактировать задачу" Click="BtnEditTask_Click" Width="151" FontSize="14"/>
-            <Button Name="btnDeleteTask" Content="Удалить задачу" Click="BtnDeleteTask_Click" Width="125" FontSize="14"/>
-            <Button Name="btnSaveTask" Content="Сохранить" Click="BtnSaveTasks_Click" Width="102" FontSize="14"/>
-            <Button Name="btnLoadTask" Content="Загрузить" Click="BtnLoadTasks_Click" Width="93" FontSize="14"/>
-            <ComboBox Name="comboStatus" SelectionChanged="ComboStatus_SelectionChanged" Width="91" SelectedIndex="-1" FontSize="14">
+        <StackPanel DockPanel.Dock="Right" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Name="btnAddTask" Content="Добавить задачу" Click="BtnAddTask_Click" Height="40" Width="150" FontSize="14" VerticalAlignment="Center"/>
+            <Button Name="btnEditTask" Content="Редактировать задачу" Click="BtnEditTask_Click" Width="150" FontSize="14" Height="40" VerticalAlignment="Center"/>
+            <Button Name="btnDeleteTask" Content="Удалить задачу" Click="BtnDeleteTask_Click" Width="150" FontSize="14" Height="40" VerticalAlignment="Center"/>
+            <Button Name="btnSaveTask" Content="Сохранить" Click="BtnSaveTasks_Click" Width="150" FontSize="14" Height="40" VerticalAlignment="Center"/>
+            <Button Name="btnLoadTask" Content="Загрузить" Click="BtnLoadTasks_Click" Width="150" FontSize="14" Height="40" VerticalAlignment="Center"/>
+            <ComboBox Name="comboStatus" SelectionChanged="ComboStatus_SelectionChanged" Width="150" SelectedIndex="-1" FontSize="14" VerticalAlignment="Center">
                 <ComboBoxItem Content="Все" />
                 <ComboBoxItem Content="Завершено" />
                 <ComboBoxItem Content="В процессе" />
@@ -24,7 +24,7 @@
 
         <!-- Таблица задач -->
 
-        <DataGrid Name="dataGridTasks" AutoGenerateColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" Height="363" FontSize="16">
+        <DataGrid Name="dataGridTasks" AutoGenerateColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" Height="363" Width="610">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" />
                 <DataGridTextColumn Header="Описание" Binding="{Binding Description}" />
