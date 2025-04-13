@@ -1,0 +1,37 @@
+﻿<Window x:Class="DealPlaner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DealPlaner"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <!-- Панель инструментов -->
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button Name="btnAddTask" Content="Добавить задачу" Click="BtnAddTask_Click" Height="46" Width="147" FontSize="14"/>
+            <Button Name="btnEditTask" Content="Редактировать задачу" Click="BtnEditTask_Click" Width="151" FontSize="14"/>
+            <Button Name="btnDeleteTask" Content="Удалить задачу" Click="BtnDeleteTask_Click" Width="125" FontSize="14"/>
+            <Button Name="btnSaveTask" Content="Сохранить" Click="BtnSaveTasks_Click" Width="102" FontSize="14"/>
+            <Button Name="btnLoadTask" Content="Загрузить" Click="BtnLoadTasks_Click" Width="93" FontSize="14"/>
+            <ComboBox Name="comboStatus" SelectionChanged="ComboStatus_SelectionChanged" Width="91" SelectedIndex="-1" FontSize="14">
+                <ComboBoxItem Content="Все" />
+                <ComboBoxItem Content="Завершено" />
+                <ComboBoxItem Content="В процессе" />
+                <ComboBoxItem Content="Запланировано" />
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Таблица задач -->
+
+        <DataGrid Name="dataGridTasks" AutoGenerateColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" Height="363" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Срок выполнения" Binding="{Binding DueDate, StringFormat=dd.MM.yyyy}" />
+                <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority}" />
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
